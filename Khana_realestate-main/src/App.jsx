@@ -18,6 +18,7 @@ import FinalPhilosophy from './components/Philosophy/FinalPhilosophy.jsx'
 import FinalCareer from './components/Career/FinalCareer.jsx'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import Header from "./components/Property Page/Header.jsx"
 function App() {
   return (
     <Router>
@@ -30,7 +31,12 @@ function App() {
         <Route path="/career" element={<FinalCareer></FinalCareer>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="/team" element={<Leadership></Leadership>}></Route>
-        <Route path="/addproperty" element={<SubmitProperty></SubmitProperty>}></Route>
+        <Route
+          path="/addproperty"
+          element={<SubmitProperty></SubmitProperty>}
+        ></Route>
+        <Route path="/project/:id" element={<Header />} />
+
         {/*   <div className="sticky top-0   w-screen h-30 z-10" id="navbar">
         <Navbar></Navbar>
       </div>

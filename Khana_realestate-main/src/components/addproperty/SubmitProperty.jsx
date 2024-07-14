@@ -3,7 +3,9 @@ import './SubmitProperty.css'
 import Select from "react-select";
 import a from './leadership.jpg'
 import axios from 'axios';
-
+import Navbar from '../Navbar';
+import { Link } from 'react-router-dom';
+import Logo from "../../components/lg2.png";
 const SubmitProperty = () => {
   const options = [
     { value: 'Water Softener', label: 'Water Softener' },
@@ -187,7 +189,17 @@ const SubmitProperty = () => {
 
   return (
     <>
-      <header className="header">
+      <div>
+        <Link to="/">
+          <div className="w-fit z-50 h-fit absolute top-0 left-1/2 transform -translate-x-1/2 ">
+            <img src={Logo} alt="" className="w-24   z-50  " />
+          </div>
+        </Link>
+      </div>
+      <div className="sticky top-0   w-full h-30 z-10" id="navbar">
+        <Navbar></Navbar>
+      </div>
+      <header className="header -mt-28">
         <div className="flex flex-col items-center justify-center h-screen relative">
           <img
             className="object-cover w-full h-full z-24"
@@ -234,6 +246,7 @@ const SubmitProperty = () => {
                   <option value="Residential Studio Apartment">
                     Residential Studio Apartment
                   </option>
+                  <option value="Residential Studio Apartment">Villa</option>
                   {/* Add options */}
                 </select>
               </div>
@@ -375,6 +388,7 @@ const SubmitProperty = () => {
                   type="text"
                   name="pinCode"
                   onChange={handleInputChange}
+                  required
                 />
               </div>
             </div>
@@ -437,9 +451,9 @@ const SubmitProperty = () => {
             </div>
           </section>
           <div className="btn">
-          <button type="submit" className="submit-btn">
-            SUBMIT
-          </button>
+            <button type="submit" className="submit-btn">
+              SUBMIT
+            </button>
           </div>
         </form>
         {popupVisible && (
@@ -449,7 +463,7 @@ const SubmitProperty = () => {
         )}
       </div>
     </>
-  )
+  );
 }
 
 export default SubmitProperty
